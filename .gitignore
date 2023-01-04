@@ -2,3 +2,8 @@
 .DS_Store
 .vscode/*
 crimes.csv
+*.aux
+*.log
+*.fls
+*.fdb_latexmk
+*.synctex.gz

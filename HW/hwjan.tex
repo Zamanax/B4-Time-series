@@ -1,0 +1,56 @@
+\documentclass{article}
+
+\title{Time Series Homework}
+\author{Maxime Zamani}
+\date{January 2023}
+
+% Reduce document margin
+\usepackage[margin=1in]{geometry}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+    \item \textbf{Definition of drift and stationarity} \\
+    Drift : \textit{A drift is a systematic change in the mean of a time series.} \\
+    Stationarity : \textit{A time series is stationary if its statistical properties such as mean, variance, autocorrelation, etc. are all constant over time.} \\
+    \item \textbf{Equation of the AR model} \\
+    \begin{equation}
+        y_t = \phi_1 y_{t-1} + \phi_2 y_{t-2} + \dots + \phi_p y_{t-p} + \epsilon_t
+    \end{equation}
+    \item \textbf{Provide the equation of an AR model with an added trend} \\
+    \begin{equation}
+        y_t = \phi_1 y_{t-1} + \phi_2 y_{t-2} + \dots + \phi_p y_{t-p} + \beta t + \epsilon_t
+    \end{equation}
+    \item \textbf{Equation of the random walk with drift}
+    \begin{equation}
+        y_t = y_{t-1} + \beta t + \epsilon_t
+    \end{equation}
+    \item \textbf{Explain how the ACF plot is built} \\
+    \textit{The ACF plot is built by computing the correlation between the time series and a lagged version of itself. It is essentially a barplot of the correlation at different lags.} \\
+    \item \textbf{What is a PACF and what is the point} \\
+    \textit{The PACF is the partial autocorrelation function. It is the correlation between the time series and a lagged version of itself, after controlling for the variations already explained by the intervening comparisons. It allows for a simpler interpretation between the lagged version and itself without every other correlation that might affect the final value.} \\
+    \item \textbf{Explain the Box-Jenkins method, and the nature of the diagnostics we run to assess a model} \\
+    \textit{The Box-Jenkins method is a method to identify the best model for a time series. It consists of identifying the order of the AR and MA models, and then running diagnostics to assess the model.} \\
+    \item \textbf{Difference between AIC and BIC, and explanation on how they are used} \\
+    \textit{The AIC and BIC are both used to assess the quality of a model. The AIC is the Akaike Information Criterion, and the BIC is the Bayesian Information Criterion. The AIC is the log-likelihood of the model, minus the number of parameters. The BIC is the log-likelihood of the model, minus the number of parameters, divided by 2. The equations are:} \\
+    \begin{equation}
+        AIC = -2 \log(L) + 2k
+    \end{equation}
+    \begin{equation}
+        BIC = -2 \log(L) + \log(n)k
+    \end{equation}
+    \textit{where L is the log-likelihood of the model, k is the number of parameters, and n is the number of observations. The AIC and BIC are used to compare models. The model with the lowest AIC or BIC is the best model.} \\
+    \textit{The AIC tries to select the model that most adequately describes an unknown, high dimensional reality. On the contrary, BIC tries to find the true model among the set of candidates. In general they are both used to select the best model in a set of candidates.} \\
+    \item \textbf{Definition of Log likelihood, and how it is built} \\
+    \textit{The log likelihood is the log of the likelihood function. It is used to assess the quality of a model. It is built by taking the log of the likelihood function. The likelihood function itself varies on the model being used.} \\
+    \item \textbf{What is the signification of a spectrogram?} \\
+    \textit{A spectrogram is a visual representation of the spectrum of frequencies of a signal as it varies with time. It is used to assess the frequency content of a signal.} \\
+    \item \textbf{Explain the underlying principle behind a matrix profile} \\
+    \textit{A matrix profile is a data structure that allows for the efficient discovery of patterns in a time series data set. It is based on the concept of "motifs", which are repeating patterns within the data. The matrix profile is created by calculating the distance between every pair of sub sequences in the time series data, and then organizing these distances in a matrix. This matrix can then be used to identify the most similar pairs of sub sequences, and thereby identify the repeating motifs in the data. The matrix profile allows for the rapid identification of these motifs, as it pre-calculates and stores the distances between all pairs of sub sequences, making it possible to quickly find the most similar pairs without having to recalculate the distances each time.} \\
+    \item \textbf{What is the difference between shapelet mining and motif discovery in time series?} \\
+    \textit{Motif discovery and shapelet mining are both techniques used to identify patterns in time series data. However, they differ in the specific type of pattern they are designed to detect.\\ Motif discovery is focused on identifying repeating patterns, or motifs, in the time series data. These motifs may be of any length and may occur at any time within the data. The goal of motif discovery is to identify these repeating patterns, regardless of their position or length, and to understand the underlying structure of the data. \\ Shapelet mining, on the other hand, is focused on identifying short, informative sub sequences within the time series data. These sub sequences, known as shapelets, are typically much shorter than the motifs that are identified through motif discovery. The goal of shapelet mining is to identify these informative sub sequences and to use them to classify the time series data.\\ Overall, the main difference between motif discovery and shapelet mining is the specific type of pattern they are designed to detect. Motif discovery is focused on identifying repeating patterns of any length, while shapelet mining is focused on identifying short, informative sub sequences within the data.} \\
+\end{enumerate}
+
+\end{document}
